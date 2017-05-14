@@ -4,8 +4,6 @@ var process = require('process');
 var root = (process.env.FSD_COVERAGE) ? '../js_cov' : '../js';
 var mQ = require(root + '/makeQuery.js');
 
-
-
 exports.testMakeProjection = function (test) {
   var proj  = mQ.makeMongoProjection(
     ['BSPName', 'AppKey']);

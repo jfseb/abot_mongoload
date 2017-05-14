@@ -7,8 +7,11 @@
   "scripts": {
     "build": "gulp && tsc",
     "test": "gulp test",
+    "migrateOModel2MGModel" : "node js/migrate/runOModel2ModelDoc.js",
     "instrument": "jscoverage js/ js_cov/ --exclude *.map",
-    "testcov": "export FSD_COVERAGE=1 && nodeunit test/ --reporter=lcov | coveralls"
+    "testcov": "export FSD_COVERAGE=1 && nodeunit test/ --reporter=lcov | coveralls",
+    "load_testmodel": "SET ABOT_MODELPATH=&& SET ABOT_MONGODBNAME=&& node js/loadmodel.js",
+    "load_wosap": "SET ABOT_MODELPATH=../fdevstart/sensitive&& SET ABOT_MONGODBNAME=wosap && node js/loadmodel.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,7 @@
   "keywords": [
     "typescript",
     "abot",
-    "jaro winkler"
+    "mongodb"
   ],
   "author": "jfsebpublic@gmail.com",
   "license": "MIT",
